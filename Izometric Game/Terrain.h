@@ -10,7 +10,10 @@ class Terrain
 {
 private:
 	void loadTerrainTexture();
-	int x;
+	float scale_factor;
+	float tile_X;
+	float tile_Y;
+	
 
 
 	
@@ -22,5 +25,6 @@ public:
 	std::vector <sf::Sprite> terrain_sprites;
 	void setMap();
 	std::vector <sf::Sprite> terrain_map;
+	void setFactor(bool isMore);
 	
 };

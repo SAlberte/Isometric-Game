@@ -1,15 +1,20 @@
+#pragma once
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include <iostream>
 #include <cstdlib>
 #include <iostream>
+#include "Camera.h"
 #include "Terrain.h"
+
+
 
 class Engine 
 {
 public:
 	 Engine(sf::RenderWindow & window);
 	 Terrain terrain;
+	 Camera camera;
 	
 	void run(sf::RenderWindow & window);
 private:

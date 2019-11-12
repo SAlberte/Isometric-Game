@@ -30,9 +30,23 @@
 		   {
 			   if (event.type == sf::Event::Closed)
 				   window.close();
+			   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Equal))
+			   {
+				   camera.setZoom(false);
+			   }
+			   else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Dash))
+			   {
+				   camera.setZoom(true);
+			   }
+			   if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+			   {
+				   camera.setCameraPos(sf::Mouse::getPosition(window));
+			   }
+				   
+
 
 		   }
-		   
+		   camera.setCamera(window);
 		   window.clear(sf::Color::Blue);
 		   draw(window);
 		   window.display();
