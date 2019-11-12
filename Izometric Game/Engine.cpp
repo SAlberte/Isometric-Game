@@ -15,8 +15,8 @@
 
    void Engine::draw(sf::RenderWindow& window) const
 {
-	   for (int i =0;i<terrain.terrain_sprites.size();i++)
-	      window.draw(terrain.terrain_sprites[i]);
+	   for (int i=0;i<terrain.terrain_map.size();i++)
+	      window.draw(terrain.terrain_map[i]);
 };
 
    void Engine::run(sf::RenderWindow & window)

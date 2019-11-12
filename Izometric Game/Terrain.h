@@ -10,7 +10,9 @@ class Terrain
 {
 private:
 	void loadTerrainTexture();
-	
+	int x;
+
+
 	
 public:
 	Terrain();
@@ -18,5 +20,7 @@ public:
 	sf::Texture terrain_tex;
 	sf::Sprite terrain_spr;
 	std::vector <sf::Sprite> terrain_sprites;
+	void setMap();
+	std::vector <sf::Sprite> terrain_map;
 	
 };
