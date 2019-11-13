@@ -19,5 +19,6 @@ public:
 	void run(sf::RenderWindow & window);
 private:
 	 void draw(sf::RenderWindow & window) const;
-
+	 void setCamera(sf::RenderWindow & window);
+	 bool is_button_pressed;
 };

@@ -11,6 +11,7 @@
 	window.create(sf::VideoMode(1200, 800), "CUBE");
 	window.setFramerateLimit(60);
 	run(window);
+	is_button_pressed = false;
 };
 
    void Engine::draw(sf::RenderWindow& window) const
@@ -40,7 +41,12 @@
 			   }
 			   if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			   {
-				   camera.setCameraPos(sf::Mouse::getPosition(window));
+				   setCamera(window);
+				  
+			   }
+			   else
+			   {
+				   is_button_pressed = false;
 			   }
 				   
 
@@ -55,4 +61,10 @@
 	   
    };
 
-  
+   void Engine::setCamera(sf::RenderWindow & window)
+   {
+	   if (!is_button_pressed)
+		   camera.setfirst_pos(sf::Mouse::getPosition(window));
+	   is_button_pressed = true;
+		   camera.setCameraPos(sf::Mouse::getPosition(window));
+   }

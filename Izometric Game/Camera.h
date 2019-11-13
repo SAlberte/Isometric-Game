@@ -19,5 +19,8 @@ public:
 	 void setCamera(sf::RenderWindow & window);
 	 void setZoom(bool isZoom);
 	 void setCameraPos(sf::Vector2i xy);
+	 sf::Vector2i first_pos;
+	 sf::Vector2i actual_pos;
+	 void setfirst_pos(sf::Vector2i clickpos);
 };
 
