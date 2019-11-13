@@ -37,8 +37,10 @@ void Camera::setZoom(bool isZoom)
 void Camera::setCameraPos(sf::Vector2i xy)
 {
 
-	pos_x -= ((float)xy.x-(float)first_pos.x)/50.f;
-	pos_y -= ((float)xy.y-(float)first_pos.y)/50.f;
+	pos_x -= ((float)xy.x-(float)first_pos.x);
+	pos_y -= ((float)xy.y-(float)first_pos.y);
+	first_pos.x = first_pos.x + ((float)xy.x - (float)first_pos.x);
+	first_pos.y = first_pos.y + ((float)xy.y - (float)first_pos.y);
 }
 
 void Camera::setfirst_pos(sf::Vector2i clickpos)
