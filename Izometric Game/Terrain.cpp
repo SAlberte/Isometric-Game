@@ -35,13 +35,18 @@ void Terrain::setMap()
 	float tile_X_now = tile_X * scale_factor;
 	float tile_Y_now = tile_Y * scale_factor;
 
-	for (int j = 0; j < 100; j++)
+	for (int j = 0; j < 10; j++)
 	{
-		int j_now = (j + 1) % 2;
+		int j_now = j  % 2;
 		for (int i = 0; i < 10; i++)
 		{
 				terrain_sprites[i % 3].setScale(scale_factor,scale_factor);
-				terrain_sprites[i % 3].setPosition((j_now%2)*(-tile_X_now/2.f) + (i * 160.f+(j%2)*4.f)*scale_factor, (j-1.f)*tile_Y_now/2.f);
+				if(i==0)
+				terrain_sprites[i % 3].setPosition(j_now*(tile_X_now/2.f+4.f)+i*(tile_X_now),j*tile_Y_now/2.f);
+				else 
+				terrain_sprites[i % 3].setPosition(j_now*(tile_X_now / 2.f+4.f) + (i*(tile_X_now+8.f)), j*tile_Y_now / 2.f);
+
+
 				terrain_map.push_back(terrain_sprites[i % 3]);
 
 			

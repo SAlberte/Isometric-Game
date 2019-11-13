@@ -7,10 +7,10 @@
 
 Camera::Camera() 
 {
-	pos_x = 1200.f;
-	pos_y = 800.f;
-	camera_width = 600.f;
-	camera_height = 400.f;
+	pos_x = 600;
+	pos_y = 400;
+	camera_width = 1200;
+	camera_height = 800.f;
 	zoom = 1.f;
 
 	view.setCenter(sf::Vector2f(pos_x,pos_y));

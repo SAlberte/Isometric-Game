@@ -41,8 +41,7 @@
 			   }
 			   if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			   {
-				   setCamera(window);
-				  
+				   setCamera(window); 
 			   }
 			   else
 			   {
