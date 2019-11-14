@@ -47,3 +47,8 @@ void Camera::setfirst_pos(sf::Vector2i clickpos)
 {
 	first_pos = clickpos;
 }
+
+sf::Vector2f Camera::getcameraOffset()
+{
+	return(sf::Vector2f(pos_x - 600.f, pos_y - 400.f));
+}

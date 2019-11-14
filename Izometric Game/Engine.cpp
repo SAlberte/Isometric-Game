@@ -18,6 +18,7 @@
 {
 	   for (int i=0;i<terrain.terrain_map.size();i++)
 	      window.draw(terrain.terrain_map[i]);
+	   window.draw(terrain.cursor);
 };
 
    void Engine::run(sf::RenderWindow & window)
@@ -47,7 +48,7 @@
 			   {
 				   is_button_pressed = false;
 			   }
-				   
+			   terrain.getSelectedTile(sf::Mouse::getPosition(window),camera.getcameraOffset());
 
 
 		   }

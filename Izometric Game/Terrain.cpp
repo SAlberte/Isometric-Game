@@ -15,6 +15,16 @@ Terrain::Terrain()
 	scale_factor = 1.f;
 	loadTerrainTexture();
 	setMap();
+	cursor.setPointCount(4);
+
+	// define the points
+	cursor.setPoint(0, sf::Vector2f(0, 40));
+	cursor.setPoint(1, sf::Vector2f(76, 0));
+	cursor.setPoint(2, sf::Vector2f(152, 40));
+	cursor.setPoint(3, sf::Vector2f(76, 80));
+	cursor.setFillColor(sf::Color::Transparent);
+	cursor.setOutlineColor(sf::Color::Red);
+	cursor.setOutlineThickness(5);
 	
 }
 
@@ -64,4 +74,15 @@ void Terrain::setFactor(bool isMore)
 	else 
 		scale_factor -= 0.2f;
 	setMap();
+}
+
+void Terrain::getSelectedTile(sf::Vector2i mouse_pos,sf::Vector2f cameraOffset)
+{
+	
+	int x =  (mouse_pos.x+cameraOffset.x)/152;
+	int y =  (mouse_pos.y+cameraOffset.y)/40;
+	 
+	if(x>=0 && y>=0 && y<10 && x<10)
+		cursor.setPosition(terrain_map[y*10+x].getPosition());
+
 }

@@ -26,5 +26,7 @@ public:
 	void setMap();
 	std::vector <sf::Sprite> terrain_map;
 	void setFactor(bool isMore);
+	void getSelectedTile(sf::Vector2i mousePos,sf::Vector2f cameraOffset);
+	sf::ConvexShape cursor;
 	
 };

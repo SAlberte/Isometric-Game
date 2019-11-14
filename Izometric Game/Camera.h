@@ -22,5 +22,6 @@ public:
 	 sf::Vector2i first_pos;
 	 sf::Vector2i actual_pos;
 	 void setfirst_pos(sf::Vector2i clickpos);
+	 sf::Vector2f getcameraOffset();
 };
 
