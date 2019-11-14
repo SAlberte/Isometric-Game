@@ -16,6 +16,7 @@ Terrain::Terrain()
 	loadTerrainTexture();
 	setMap();
 	cursor.setPointCount(4);
+	sprite_iterator = 0;
 
 	// define the points
 	cursor.setPoint(0, sf::Vector2f(0, 40));
@@ -81,8 +82,32 @@ void Terrain::getSelectedTile(sf::Vector2i mouse_pos,sf::Vector2f cameraOffset)
 	
 	int x =  (mouse_pos.x+cameraOffset.x)/152;
 	int y =  (mouse_pos.y+cameraOffset.y)/40;
-	 
-	if(x>=0 && y>=0 && y<10 && x<10)
-		cursor.setPosition(terrain_map[y*10+x].getPosition());
+	
+	if (x >= 0 && y >= 0 && y < 10 && x < 10)
+	{
+		SelectedTile = y * 10 + x;
+		cursor.setPosition(terrain_map[y * 10 + x].getPosition());
+
+	}
+		
+		
+
+}
+
+bool Terrain::ChangeTile(bool is_changed)
+{
+	if (is_changed)
+	{
+		sf::Vector2f posbuff = terrain_map[SelectedTile].getPosition();
+		terrain_map[SelectedTile] = terrain_sprites[sprite_iterator];
+		terrain_map[SelectedTile].setPosition(posbuff);
+		
+		if (sprite_iterator > 1)
+			sprite_iterator = 0;
+		else
+			sprite_iterator++;
+		return true;
+	}
+	else return false;
 
 }

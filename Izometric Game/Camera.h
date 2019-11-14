@@ -20,6 +20,7 @@ public:
 	 void setZoom(bool isZoom);
 	 void setCameraPos(sf::Vector2i xy);
 	 sf::Vector2i first_pos;
+	 float realfirst_pos_x;
 	 sf::Vector2i actual_pos;
 	 void setfirst_pos(sf::Vector2i clickpos);
 	 sf::Vector2f getcameraOffset();

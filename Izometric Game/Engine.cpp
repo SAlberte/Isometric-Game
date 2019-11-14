@@ -8,7 +8,7 @@
 
  Engine::Engine(sf::RenderWindow & window)
 {
-	window.create(sf::VideoMode(1200, 800), "CUBE");
+	window.create(sf::VideoMode(1200, 800), "isometric tileset");
 	window.setFramerateLimit(60);
 	run(window);
 	is_button_pressed = false;
@@ -46,6 +46,11 @@
 			   }
 			   else
 			   {
+				   if (is_button_pressed)
+				   {
+					   terrain.ChangeTile((int)camera.realfirst_pos_x == sf::Mouse::getPosition(window).x);
+
+				   }
 				   is_button_pressed = false;
 			   }
 			   terrain.getSelectedTile(sf::Mouse::getPosition(window),camera.getcameraOffset());
