@@ -33,10 +33,11 @@ void Terrain::loadTerrainTexture()
 {
 	terrain_tex.loadFromFile("images/terrain.png");
 	terrain_spr.setTexture(terrain_tex);
+	for(int j=0;j<3;j++)
 	for (int i = 0; i < 3; i++)
 	{
 
-		terrain_spr.setTextureRect(sf::IntRect(3, i * 85 + 3, 153, 81));
+		terrain_spr.setTextureRect(sf::IntRect(156 * j + 3.f+j , i * 85 + 3, 153, 81));
 		terrain_sprites.push_back(terrain_spr);
 	}
 }
@@ -98,11 +99,8 @@ bool Terrain::ChangeTile(bool is_changed)
 {
 	if (is_changed)
 	{
-		sf::Vector2f posbuff = terrain_map[SelectedTile].getPosition();
-		terrain_map[SelectedTile] = terrain_sprites[sprite_iterator];
-		terrain_map[SelectedTile].setPosition(posbuff);
-		
-		if (sprite_iterator > 1)
+		terrain_map[SelectedTile].setTextureRect(terrain_sprites[sprite_iterator].getTextureRect());		
+		if (sprite_iterator > 7)
 			sprite_iterator = 0;
 		else
 			sprite_iterator++;
