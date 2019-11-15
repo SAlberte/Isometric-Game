@@ -49,7 +49,7 @@ void Terrain::setMap()
 	float tile_X_now = tile_X * scale_factor;
 	float tile_Y_now = tile_Y * scale_factor;
 
-	for (int j = 0; j < 10; j++)
+	for (int j = 0; j < 100; j++)
 	{
 		int j_now = j  % 2;
 		for (int i = 0; i < 10; i++)
@@ -84,9 +84,9 @@ void Terrain::getSelectedTile(sf::Vector2f worldpos)
 {
 	
 	int x =  worldpos.x/256;
-	int y =  worldpos.y/79;
+	int y =  worldpos.y/64;
 	
-	if (x >= 0 && y >= 0 && y < 10 && x < 10)
+	if (x >= 0 && y >= 0 && y < 100 && x < 100)
 	{
 		SelectedTile = y * 10 + x;
 		cursor.setPosition(terrain_map[y * 10 + x].getPosition());
