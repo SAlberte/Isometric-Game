@@ -18,6 +18,7 @@
 {
 	   for (int i=0;i<terrain.terrain_map.size();i++)
 	      window.draw(terrain.terrain_map[i]);
+	   window.draw(terrain.cursorSprite);
 	   window.draw(terrain.cursor);
 };
 
@@ -40,6 +41,11 @@
 			   {
 				   camera.setZoom(true);
 			   }
+			   if (event.type == sf::Event::MouseWheelScrolled)
+			   {
+				   terrain.changeTileiterator(event.mouseWheelScroll.delta);
+			   }
+
 			   if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			   {
 				   setCamera(window); 
@@ -53,6 +59,7 @@
 				   }
 				   is_button_pressed = false;
 			   }
+			   
 			   sf::Vector2i mousepos = sf::Mouse::getPosition(window);
 			   sf::Vector2i pixelPos = sf::Mouse::getPosition(window);			   
 			   sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);

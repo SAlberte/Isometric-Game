@@ -22,6 +22,7 @@ public:
 	//void getTile();
 	sf::Texture terrain_tex;
 	sf::Sprite terrain_spr;
+	sf::Sprite cursorSprite;
 	int SelectedTile;
 	std::vector <sf::Sprite> terrain_sprites;
 	void setMap();
@@ -32,4 +33,5 @@ public:
 	bool ChangeTile(bool is_changed);
 	sf::Vector2i prev_mousePos;
 	int sprite_iterator;
+	void changeTileiterator(int isnext);
 };
