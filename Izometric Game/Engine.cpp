@@ -53,7 +53,10 @@
 				   }
 				   is_button_pressed = false;
 			   }
-			   terrain.getSelectedTile(sf::Mouse::getPosition(window),camera.getcameraOffset());
+			   sf::Vector2i mousepos = sf::Mouse::getPosition(window);
+			   sf::Vector2i pixelPos = sf::Mouse::getPosition(window);			   
+			   sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
+			   terrain.getSelectedTile(worldPos);
 
 
 		   }
