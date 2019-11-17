@@ -18,7 +18,14 @@
 {
 	   for (int i=0;i<terrain.terrain_map.size();i++)
 	      window.draw(terrain.terrain_map[i]);
+		if (terrain.sprite_iterator > 19)
+			{
+		   window.draw(terrain.obstacles.cursorSprite);
+			}
+		else
 	   window.draw(terrain.cursorSprite);
+	  for (int i = 0; i < terrain.obstacles.Obstacle_Map.size(); i++)
+		   window.draw(terrain.obstacles.Obstacle_Map[i]);
 	   window.draw(terrain.cursor);
 };
 

@@ -1,3 +1,4 @@
+
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
@@ -5,6 +6,9 @@
 #include <cstdlib>
 #include <iostream>
 #include <algorithm>
+#include "Obstacles.h"
+
+
 
 class Terrain
 {
@@ -19,6 +23,7 @@ private:
 	
 public:
 	Terrain();
+	Obstacles obstacles;
 	//void getTile();
 	sf::Texture terrain_tex;
 	sf::Sprite terrain_spr;

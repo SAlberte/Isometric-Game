@@ -6,7 +6,8 @@
 #include <iostream>
 #include <algorithm>
 
-class Obstacles
+
+class Obstacles 
 {
 private:
 	void loadObstaclesTexture();
@@ -21,15 +22,9 @@ public:
 	sf::Texture Obstacle_tex;
 	sf::Sprite Obstacle_spr;
 	sf::Sprite cursorSprite;
-	int SelectedTile;
 	std::vector <sf::Sprite> Obstacle_sprites;
-	void setObstacleMap();
+	void AddObstacle(int iterator,sf::Vector2f Position);
 	std::vector <sf::Sprite> Obstacle_Map;
-	void setFactor(bool isMore);
-	void getSelectedObstacle(sf::Vector2f worldpos);
-	sf::ConvexShape cursor;
-	bool ChangeObstacle(bool is_changed);
-	sf::Vector2i prev_mousePos;
-	int sprite_iterator;
-	void changeObstacleiterator(int isnext);
+	bool checkforExistingObstacle(sf::Vector2f Position);
+	void setCursorSprite(int iterator,sf::Vector2f Position);
 };
